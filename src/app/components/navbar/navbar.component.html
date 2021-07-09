@@ -1,0 +1,61 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport [mode]="(isHandset | async) ? 'over' : 'side'"
+    [opened]="(isHandset | async)===false" [attr.role]="(isHandset | async) ? 'dialog' : 'navigation'">
+    <mat-toolbar id="side_toolbar"><mat-label >Menu</mat-label></mat-toolbar>
+    <mat-nav-list>
+      <div *ngIf="(isHandset | async)===false">
+        <a mat-list-item *ngIf='authenticationService.isLoggedIn()'
+          [routerLink]="['welcome',authenticationService.getAuthenticatedUser()]">
+          <mat-icon>home</mat-icon><label>Home</label>
+        </a>
+        <a mat-list-item *ngIf='authenticationService.isLoggedIn()' routerLink="/todos">
+          <mat-icon>playlist_add_check</mat-icon><label>My tasks</label>
+        </a>
+        <a mat-list-item *ngIf='!authenticationService.isLoggedIn()' routerLink="/login">
+          <mat-icon>login</mat-icon><label>Log-in</label>
+        </a>
+        <a mat-list-item *ngIf='authenticationService.isLoggedIn()' routerLink="/logout">
+          <mat-icon>logout</mat-icon><label>Log-out</label>
+        </a>
+      </div>
+
+      <div *ngIf="(isHandset | async)===true">
+        <a mat-list-item *ngIf='authenticationService.isLoggedIn()' (click)="sidenav.toggle()"
+          [routerLink]="['welcome',authenticationService.getAuthenticatedUser()]">
+          <mat-icon>home</mat-icon><label>Home</label>
+        </a>
+        <a mat-list-item *ngIf='authenticationService.isLoggedIn()' (click)="sidenav.toggle()" routerLink="/todos">
+          <mat-icon>playlist_add_check</mat-icon><label>My tasks</label>
+        </a>
+        <a mat-list-item *ngIf='!authenticationService.isLoggedIn()' (click)="sidenav.toggle()" routerLink="/login">
+          <mat-icon>login</mat-icon><label>Log-in</label>
+        </a>
+        <a mat-list-item *ngIf='authenticationService.isLoggedIn()' (click)="sidenav.toggle()" routerLink="/logout">
+          <mat-icon>logout</mat-icon><label>Log-out</label>
+        </a>
+      </div>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="sidenav_content">
+      <div class="top_toolbar">
+        <mat-toolbar color="primary">
+          <button *ngIf="(isHandset | async) === true" type="button" aria-label="Toggle sidenav" mat-icon-button
+            (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span><a href="http://bit.ly/linkedinsaurabh" target="_blank">TrimMyTasks</a></span>
+        </mat-toolbar>
+      </div>
+
+      <div class="sidenav_body">
+        <ng-content></ng-content>
+      </div>
+
+    </div>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

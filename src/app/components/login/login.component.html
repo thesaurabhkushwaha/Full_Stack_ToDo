@@ -1,0 +1,38 @@
+<div class="bg">
+<form  #form="ngForm" (ngSubmit)="handleJWTAuthLogin()"
+    [class]="(isHandset | async) ? 'mobile_form' : 'web_login' " novalidate>
+    <mat-card [class]="(isHandset | async) ? 'mobile_login_card' : 'login_card' ">
+        <mat-card-header>
+            <mat-card-title><label id="title">Log-In</label></mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input [class]="(isHandset | async) ? 'mobile' : 'web_input' " matInput placeholder="Username"
+                            type="text" #name="ngModel" name="username" [(ngModel)]="username" required>
+                        <mat-error *ngIf="name.invalid && name.touched">Enter <strong>Username</strong></mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="Password" #pass="ngModel" type="password" name="password"
+                            [(ngModel)]="password" required>
+                        <mat-error *ngIf="pass.invalid">Enter
+                            <strong>Password</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Login</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
+</div>

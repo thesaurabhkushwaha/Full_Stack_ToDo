@@ -1,0 +1,58 @@
+<form [formGroup] = 'todoForm' (ngSubmit)=" !todoForm.invalid && saveTodo()">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Task</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput #task type="text" placeholder="Task description" formControlName = 'task' >
+                        <mat-error *ngIf="todoForm.get('task').invalid && todoForm.get('task').touched && customValidator(todoForm.get('task')) "><strong>Invalid Task description</strong></mat-error>
+                    </mat-form-field>
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput type="date" placeholder="Target date" formControlName = 'targetDate' >
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Save</button>
+        </mat-card-content>
+    </mat-card>
+</form>
+<!-- {{todoForm.value | json}} -->
+<!-- <div class="row">
+    <div class="container col-sm-6">
+        <h2>{{action}} Todo</h2>
+        <form (ngSubmit)=" !todoForm.invalid && saveTodo()" #todoForm="ngForm">
+            
+            <fieldset class="form-group">
+                <label>Task</label>
+                <input type="text" #task="ngModel" [(ngModel)]='todo.task' name="task" class="form-control" required minlength="5">
+            </fieldset>
+            <fieldset class="form-group">
+                <label>Target date</label>
+                <input type="date" #date="ngModel" [ngModel]="todo.targetDate|date:'yyyy-MM-dd' "
+                    (ngModelChange)="todo.targetDate = $event" name="targetDate" class="form-control" required>
+            </fieldset>
+
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+    <div class="container col-sm-4">
+        <div *ngIf="todoForm.dirty && todoForm.invalid" class = "card" style="margin-top: 20%;">
+            <div class = "card-header" style='background-color: rgba(253, 184, 100, 0.65);'>
+                <H4 style='color: rgb(255, 115, 0); text-align:"center" ;'>Validation checks </H4>
+            </div>
+            <div class ="card-body" style='background-color: rgba(255, 200, 134, 0.65);'>
+                <div class="alert alert-warning" *ngIf="todoForm.dirty && task.invalid">Invalid Task (min. length: 5 characters) </div>
+                <div class="alert alert-warning" *ngIf="todoForm.dirty && date.invalid">Invalid Date </div>
+            </div>
+        </div>
+    </div>
+</div> -->

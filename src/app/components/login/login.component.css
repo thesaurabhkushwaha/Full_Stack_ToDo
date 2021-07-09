@@ -1,0 +1,97 @@
+.full-width {
+    width: 100%;
+}
+.mobile_login_card{
+    margin: 20% 5% auto 5%;
+}
+.login-card {
+    min-width: 120px;
+    margin: 50px auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    flex: 1;
+}
+
+.col:last-child {
+    margin-right: 0;
+}
+
+.web_login {
+    width:600px;
+    margin:auto;
+    padding: 5%;
+}
+
+mat-card {
+    background-color: lightcyan;
+}
+
+input {
+    font-size: x-large;
+}
+
+#title {
+    font-size: xx-large;
+}
+
+#errorMessage {
+    font-size: x-large;
+    text-align: center;
+    margin: auto;
+}
+
+.errorForm {
+    background-color: lightcoral;
+}
+
+button{
+    width: 100%;
+}
+/* #login_container {
+    background-color: yellowgreen !important;
+    
+}
+
+.card-header {
+    background-color: lightskyblue;
+    
+}
+
+.card-body {
+    background-color: rgb(181, 227, 255);
+}
+
+.loginCard {
+    margin: auto;
+}
+
+.card {
+    box-shadow: 5px 5px 10px rgb(91, 167, 255);
+    margin-top: 100px;
+}
+
+.loginButton {
+    width: 100%;
+    border-radius: 20px;
+    margin: 2% auto;
+    font-size: larger;
+}
+
+.loginLabels {
+    font-size: large;
+}
+
+#invalidCredential{
+    margin: 30px auto 10px auto;
+    text-align: center;
+}
+h3{
+    font-size: 30px;
+    margin: 10px;
+} */

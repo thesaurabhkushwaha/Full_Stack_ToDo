@@ -1,0 +1,67 @@
+.todosTableContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.data_table {
+    width: 100%;
+    height: 100%;
+}
+
+.mat-row:hover {
+    background-color: lightgray;
+}
+
+th {
+    font-size: 13.3pt;
+    font-weight: bold;
+    color: rgb(59, 59, 59);
+}
+
+#taskRow {
+    font-weight: bold;
+    font-size: 12pt;
+    color: rgb(102, 102, 102);
+}
+
+.mat-header-cell, .mat-cell {
+    text-align: center;
+}
+
+#web_add_button {
+    position: fixed;
+    top: 80%;
+    right: 20%;
+}
+
+#delete_button {
+    margin-left: 10px;
+}
+
+#mobile_add_button {
+    position: fixed;
+    top: 80%;
+    right: 27%;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+mat-card-header {
+    font-size: large;
+}
+
+/* .paginationContainer{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#previousButton{
+    flex:1
+}
+#nextButton{
+    flex:1;
+} */

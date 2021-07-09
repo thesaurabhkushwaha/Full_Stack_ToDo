@@ -1,0 +1,14 @@
+<header style="background-color:lightgreen;">
+    <nav>
+        <div><a href="http://www.google.com" class = "navbar-brand">Trim My Tasks</a></div>
+
+        <ul >
+            <li *ngIf='authenticationService.isLoggedIn()'><a [routerLink]="['welcome',authenticationService.getAuthenticatedUser()]" class = "nav-link">Home</a></li>
+            <li *ngIf='authenticationService.isLoggedIn()'><a routerLink="/todos" class = "nav-link">Tasks</a></li>
+        </ul>
+        <ul >
+            <li *ngIf='!authenticationService.isLoggedIn()'><a routerLink="/login" class = "nav-link">Login</a></li>
+            <li *ngIf='authenticationService.isLoggedIn()'><a routerLink="/logout" class = "nav-link">Logout</a></li>
+        </ul>
+    </nav>
+</header>

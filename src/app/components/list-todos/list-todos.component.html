@@ -1,0 +1,60 @@
+<div class="todosTableContainer">
+    <!-- <div class=''>
+        <div *ngIf='message'><strong>{{message}}</strong>
+        </div>
+    </div> -->
+    <div class="data_table" *ngIf="getLength() !== 0">
+        <table mat-table [dataSource]="todos" class="mat-elevation-z8" style="width: 100%;">
+            <ng-container matColumnDef="task">
+                <th mat-header-cell *matHeaderCellDef> Tasks </th>
+                <td mat-cell *matCellDef="let todo "><label id="taskRow">{{todo.task}}</label> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="targetDate">
+                <th mat-header-cell *matHeaderCellDef> Target Date </th>
+                <td mat-cell *matCellDef="let todo "> {{todo.targetDate | date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td mat-cell *matCellDef="let todo ">
+                    <mat-icon color="accent" (click)="updateTodo(todo.id)">edit</mat-icon>
+                    <mat-icon id="delete_button" color="warn" (click)="deleteTodo(todo.id)">delete</mat-icon>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+        </table>
+    </div>
+
+    <div [id]="(isHandset | async)===false?'web_add_button':'mobile_add_button'">
+        <button #add_button mat-fab (click)="addTodo()" color="primary">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <div>
+        <mat-card *ngIf="getLength() === 0">
+            <mat-card-header>
+                <mat-label>-- NO TASKS --</mat-label>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <!-- <div class="paginationContainer">
+        
+        <div [id]="(isHandset | async)===false?'web_previous_button':'mobile_previous_button'">
+            <button #previous_button mat-flat-button (click)="previousPage()" color="primary" [disabled] = "prevDis">
+                <mat-icon>navigate_before</mat-icon>
+            </button>
+        </div>
+
+        <div [id]="(isHandset | async)===false?'web_next_button':'mobile_next_button'">
+            <button #next_button mat-flat-button (click)="nextPage()" color="primary" [disabled] = "nextDis">
+                <mat-icon>navigate_next</mat-icon>
+            </button>
+        </div>
+
+    </div> -->
+
+
+</div>

@@ -1,0 +1,21 @@
+.mainCard{
+    height: 240px;
+    width:400px;
+    margin: 5% auto auto auto;
+    background-color:beige;
+    border-radius: 20px;
+}
+
+#myTasksButton{
+    margin-left: 300px;
+    margin-top: 20px;
+}
+
+#title{
+    font-size: xx-large;
+}
+
+#subTitleCard{
+    margin-top: 20px;
+    font-size: large;
+}

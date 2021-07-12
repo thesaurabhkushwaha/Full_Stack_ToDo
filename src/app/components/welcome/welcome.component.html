@@ -1,4 +1,16 @@
-<h1>Welcome</h1>
-<div class ="container">
-    <h4> Hi {{name}}, manage your tasks <a routerLink="/todos">here</a></h4>
+<div>
+    <mat-card class="mainCard">
+        <mat-card-header>
+            <mat-card-title><label id="title">Hi {{name}}!</label></mat-card-title>
+        </mat-card-header>
+        <hr>
+        <mat-card-content>
+            <div class="row">
+                <mat-card id="subTitleCard">Welcome to a ToDo app made for the minimalists. Time to trim those tasks !</mat-card>
+            </div>
+        </mat-card-content>
+        <button id="myTasksButton" mat-fab color="primary" routerLink="/todos">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </mat-card>
 </div>

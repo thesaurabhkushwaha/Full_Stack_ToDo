@@ -7,3 +7,15 @@
     flex: 1;
     margin-right: 20px;
 }
+form{
+    width: 500px;
+    height: 400px;
+    margin: 5% auto auto auto;
+}
+
+#saveButton{
+   margin-left: 40px;
+}
+mat-form-field{
+    width: 100%;
+}
